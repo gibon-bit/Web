@@ -1,0 +1,106 @@
+/* Reset и базовые */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: #f0f2f5;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Хедер и навигация */
+.header {
+  background: #222;
+  padding: 1rem 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #f9a825;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav__list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav__link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav__link.active,
+.nav__link:hover {
+  color: #f9a825;
+}
+
+/* Кнопка меню для мобильных */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #f9a825;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Основной контент */
+.main-content {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #555;
+}
+
+.btn {
+  display: inline-block;
+  background: #f9a825;
+  color: #222;
+  padding: 0.8rem 2rem;
+  font-weight: 700;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #c17900;
+}
+
+/* Футер */
+.footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background: #222;
+  color: #aaa;
+  font-size: 0.9rem;
+}

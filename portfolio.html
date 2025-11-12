@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио — Alarma</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1 class="logo">Alarma</h1>
+  <nav>
+    <a href="index.html">Главная</a>
+    <a href="portfolio.html" class="active">Портфолио</a>
+    <a href="about.html">Обо мне</a>
+    <a href="contact.html">Контакты</a>
+  </nav>
+</header>
+
+<section class="portfolio">
+  <h2>Мои проекты</h2>
+
+  <div class="filter">
+    <button data-filter="all" class="active">Все</button>
+    <button data-filter="web">Сайты</button>
+    <button data-filter="app">Приложения</button>
+    <button data-filter="design">Дизайн</button>
+  </div>
+
+  <div class="projects" id="projectList"></div>
+</section>
+
+<!-- Модальное окно -->
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3 id="modalTitle"></h3>
+    <img id="modalImg" src="" alt="">
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+<script src="js/filter.js"></script>
+<script src="js/modal.js"></script>
+</body>
+</html>
