@@ -3,41 +3,54 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Обо мне — Alarma</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Обо мне — ALARMA</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <header class="header">
-  <h1 class="logo">Alarma</h1>
-  <nav>
-    <a href="index.html">Главная</a>
-    <a href="portfolio.html">Портфолио</a>
-    <a href="about.html" class="active">Обо мне</a>
-    <a href="contact.html">Контакты</a>
-  </nav>
+  <div class="container nav">
+    <h1 class="logo">ALARMA</h1>
+    <button class="nav-toggle" aria-label="Меню">☰</button>
+    <ul class="nav__list">
+      <li><a href="index.html" class="nav__link">Главная</a></li>
+      <li><a href="portfolio.html" class="nav__link">Проекты</a></li>
+      <li><a href="about.html" class="nav__link active">Обо мне</a></li>
+      <li><a href="contact.html" class="nav__link">Контакты</a></li>
+    </ul>
+  </div>
 </header>
 
 <section class="about">
-  <div class="about-wrapper">
-    <img src="images/profile.jpg" alt="Костя Ф" class="about-photo">
-    <div>
-      <h2>Обо мне</h2>
-      <p>Меня зовут КОСТЯ Ф. Я занимаюсь созданием сайтов и приложений уже более 2 лет. Работаю с HTML, CSS, JavaScript (ES6+) и GitHub. Люблю чистый код, адаптивность и визуальную эстетику.</p>
-      <h3>Навыки:</h3>
-      <ul class="skills">
-        <li>HTML5 / CSS3</li>
-        <li>JavaScript (ES6+)</li>
-        <li>Git / GitHub</li>
-        <li>UI / UX</li>
-      </ul>
+  <div class="container">
+    <h2 class="section-title">Обо мне</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Разработчик с фокусом на результат. Работаю на стыке технологий и визуальной эстетики. Каждый проект — это не просто код, а инструмент, который решает конкретную задачу.</p>
+        <p>Ценю чистоту архитектуры, скорость работы и внимание к деталям. Не делаю компромиссов в качестве.</p>
+      </div>
+      <div class="skills-block">
+        <h3 class="skills-title">Навыки</h3>
+        <ul class="skills-list">
+          <li>HTML5 / CSS3</li>
+          <li>JavaScript (ES6+)</li>
+          <li>Git / GitHub</li>
+          <li>UI / UX Design</li>
+          <li>Адаптивная верстка</li>
+          <li>Firebase</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<footer>
-  <p>© 2025 Alarma</p>
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 ALARMA. Все права защищены.</p>
+  </div>
 </footer>
 
+<script src="script.js"></script>
 </body>
 </html>
