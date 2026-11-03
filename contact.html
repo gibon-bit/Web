@@ -1,49 +1,57 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Контакты — ALARMA</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
+// === МОБИЛЬНОЕ МЕНЮ ===
+const navToggle = document.querySelector('.nav-toggle');
+const navList = document.querySelector('.nav__list');
 
-<header class="header">
-  <div class="container nav">
-    <h1 class="logo">ALARMA</h1>
-    <button class="nav-toggle" aria-label="Меню">☰</button>
-    <ul class="nav__list">
-      <li><a href="index.html" class="nav__link">Главная</a></li>
-      <li><a href="portfolio.html" class="nav__link">Проекты</a></li>
-      <li><a href="about.html" class="nav__link">Обо мне</a></li>
-      <li><a href="contact.html" class="nav__link active">Контакты</a></li>
-    </ul>
-  </div>
-</header>
+if (navToggle && navList) {
+  navToggle.addEventListener('click', () => {
+    navList.classList.toggle('nav__list--active');
+  });
+}
 
-<section class="contact">
-  <div class="container">
-    <h2 class="section-title">Контакты</h2>
-    <p class="contact-intro">Есть проект? Обсудим.</p>
+// === ФИЛЬТР ПРОЕКТОВ ===
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
 
-    <form id="contactForm" class="contact-form">
-      <input type="text" id="name" placeholder="Имя" required>
-      <input type="email" id="email" placeholder="Email" required>
-      <textarea id="message" placeholder="Сообщение" rows="5" required></textarea>
-      <button type="submit" class="btn">Отправить</button>
-    </form>
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-    <div id="formMessage" class="form-message"></div>
-  </div>
-</section>
+    const filter = btn.getAttribute('data-filter');
 
-<footer class="footer">
-  <div class="container">
-    <p>© 2026 ALARMA. Все права защищены.</p>
-  </div>
-</footer>
+    projectCards.forEach(card => {
+      if (filter === 'all' || card.getAttribute('data-category') === filter) {
+        card.style.display = 'block';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
 
-<script src="script.js"></script>
-</body>
-            </html>
+// === ФОРМА КОНТАКТОВ ===
+const contactForm = document.getElementById('contactForm');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    console.log('Отправка:', { name, email, message });
+
+    if (formMessage) {
+      formMessage.textContent = 'Сообщение отправлено!';
+      formMessage.className = 'form-message success';
+      contactForm.reset();
+      
+      setTimeout(() => {
+        formMessage.textContent = '';
+        formMessage.className = 'form-message';
+      }, 3000);
+    }
+  });
+}
